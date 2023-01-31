@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bucket-List{% endblock %}
+
+{% block body %}
+
+    <div class="Titre">
+        <header>
+            {% block navbar %}
+                <nav>
+                    <ul>
+                        <div class="container">
+                            <h1 class="header">
+                            <li><img src="{{ asset("img/logo.png") }}">
+                                Bucket-List
+                            </li></h1>
+                        </div>
+                        <li><a href="{{ path("index_main") }}" title="Home">Home</a></li>
+                    </ul>
+                </nav>
+            {% endblock %}
+        </header>
+    </div>
+    <footer> {% block footer %}©Bucket List 2023{% endblock %}</footer>
+{% endblock %}
