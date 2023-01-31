@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Bienvenue!{% endblock %}</title>
-        <link rel="icon" href="{{ asset('img/favicon.png') }}">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bienvenue!{% endblock %}</title>
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}
-        {% block navbar %}{% endblock %}
-            <h2>Ceci est la page d'accueil !</h2>
-        {% block footer %}{% endblock %}
-        {% endblock %}
-    </body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<header>
+
+    <nav>
+        <ul>
+            <h1>
+                <li><img src="{{ asset("img/logo.png") }}">
+                    Bucket-List
+                </li>
+            </h1>
+            <h2>
+            <li><a href="{{ path("index_main") }}" title="Home">Home</a></li>
+            <li> | <a href="{{ path("main_aboutus") }}" title="About us"> About us</a></li>
+            <li> | <a href="{{ path("wish_list") }}" title="List">List</a></li>
+            </h2>
+        </ul>
+    </nav>
+
+</header>
+<main>{% block main %}{% endblock %}</main>
+
+
+<footer>©Bucket List 2023</footer>
+</body>
 </html>

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for perso in team %}
+        <p>Prénom :
+            {{ perso['firstname'] == 'Fabien' ? "&#128151" : "" }}
+            {{ perso['firstname'] }}
+        </p>
+        <p>Date de naissance : {{ perso['dateOfBirth'] | date("d-m-Y") }}</p>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
