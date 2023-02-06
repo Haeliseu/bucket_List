@@ -25,16 +25,24 @@
                 </li>
             </h1>
             <h2>
-            <li><a href="{{ path("index_main") }}" title="Home">Home</a></li>
-            <li> | <a href="{{ path("main_aboutus") }}" title="About us"> About us</a></li>
-            <li> | <a href="{{ path("wish_list") }}" title="List">List</a></li>
+                <li><a href="{{ path("index_main") }}" title="Home">Home</a></li>
+                <li> | <a href="{{ path("wish_list") }}" title="List">List</a></li>
+                <li> | <a href="{{ path("wish_add") }}" title="Add Yours!">Add Yours!</a></li>
+                <li> | <a href="{{ path("main_aboutus") }}" title="About us"> About us</a></li>
             </h2>
         </ul>
     </nav>
 
 </header>
-<main>{% block main %}{% endblock %}</main>
 
+<main>
+    {% for label, messages in app.flashes%}
+        {% for message in messages %}
+        <div class="alert-{{ label }}">
+            {{ message }}
+            </div>{% endfor%}{% endfor%}
+    {% block main %}{% endblock %}
+</main>
 
 <footer>©Bucket List 2023</footer>
 </body>

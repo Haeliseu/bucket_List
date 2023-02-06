@@ -24,6 +24,10 @@ nav ul li {
 main{
     grid-area: main;
     background-color: bisque;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 15%;
+    padding-left: 15%;
 }
 
 body {
@@ -38,9 +42,6 @@ nav{
 }
 a{
     text-decoration: none;color: black;
-}
-main h2{
-    padding-left: 15%;
 }
 li{
     display: inline;
